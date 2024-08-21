@@ -19,7 +19,7 @@ export default function Home() {
         group='Item_ID_Auto'
         type=''
       />
-      <Title text="New Women's Collection" />
+     
       <ProductList
         category="women"
         order=">="
