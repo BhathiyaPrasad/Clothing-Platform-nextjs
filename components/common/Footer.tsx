@@ -62,7 +62,7 @@ const Footer = () => (
 </footer>
 <footer className="footer footer-center bg-base-300 text-base-content p-4">
   <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by Bhathiya Prasad Industries Ltd</p>
+    <p>Copyright © {new Date().getFullYear()} - All right reserved @Saluni Fashion</p>
   </aside>
 </footer>
 </>
