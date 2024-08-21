@@ -17,14 +17,14 @@ type Product = {
   Discount: string;
   UUID: string;
   imageUrl?: string;
-  imageUrl2?: string; // Optional imageUrl property
+  imageUrl2?: string; 
   Item_ID_Auto: number
 };
 
 const orgDocId = "20240711-1011-SaluniFashion";
 
 
-const defaultImageUrl = 'https://firebasestorage.googleapis.com/v0/b/freidea-pos-img/o/20240711-1011-SaluniFashion%2FImages%2FProducts%2FbackupImage.jpg?alt=media&token=1246d87a-6de4-4494-b59b-2965bc18d629' // Replace with your default image URL
+const defaultImageUrl ='https://firebasestorage.googleapis.com/v0/b/freidea-pos-img/o/20240711-1011-SaluniFashion%2FImages%2FProducts%2FbackupImage.jpg?alt=media&token=1246d87a-6de4-4494-b59b-2965bc18d629' // Replace with your default image URL
 const storage = getStorage();
 
 async function getImageDownloadURL(imagePath: string): Promise<string> {
