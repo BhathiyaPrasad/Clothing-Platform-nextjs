@@ -289,7 +289,7 @@ const Cart = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phoneNumber" className="billing-form-label">Postal Code</label>
+                    <label htmlFor="phoneNumber" className="billing-form-label">Mobile Number</label>
                     <input
                       type="number"
                       id="number"
