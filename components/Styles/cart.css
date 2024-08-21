@@ -1,0 +1,183 @@
+/* cart.css */
+.cart-container {
+    @apply container mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6;
+  }
+  
+  .cart-item-container {
+    @apply md:col-span-2 bg-white shadow-lg rounded-lg p-6;
+  }
+  
+  .cart-title {
+    @apply text-2xl font-bold mb-6 border-b-2 border-gray-300 ;
+  }
+  
+  .cart-empty {
+    @apply text-gray-900 ;
+  }
+  
+  .cart-items-list {
+    @apply space-y-6;
+  }
+  
+  .cart-item {
+    @apply flex items-center;
+  }
+  
+  .cart-item-image {
+    @apply object-cover rounded-md mr-4;
+  }
+  
+  .cart-item-details {
+    @apply flex-1;
+  }
+  
+  .cart-item-name {
+    @apply text-lg font-semibold text-gray-900 ;
+  }
+  
+  .cart-item-info {
+    @apply text-gray-600 dark:text-gray-500;
+  }
+  
+  .cart-item-actions {
+    @apply flex items-center mt-2 space-x-2;
+  }
+  
+  .cart-quantity-button {
+    @apply btn btn-sm btn-outline;
+  }
+  
+  .cart-quantity-text {
+    @apply text-gray-900 ;
+  }
+  
+  .cart-remove-button {
+    @apply ml-4 btn btn-error text-white btn-sm;
+  }
+  
+  .cart-total {
+    @apply mt-6 text-xl font-bold text-gray-900 ;
+  }
+  
+  .cart-payment-method {
+    @apply mt-6;
+  }
+  
+  .payment-method-title {
+    @apply text-lg font-semibold mb-2 text-gray-900 ;
+  }
+  
+  .payment-method-options {
+    @apply flex items-center space-x-4;
+  }
+  
+  .payment-method-option {
+    @apply flex items-center;
+  }
+  
+  .payment-method-radio {
+    @apply radio radio-accent;
+  }
+  
+  .payment-method-label {
+    @apply ml-2 text-gray-900 ;
+  }
+  
+  .cart-place-order-button {
+    @apply mt-4 btn btn-outline btn-primary w-full;
+  }
+  
+  .billing-details-container {
+    @apply bg-white  shadow-lg rounded-lg p-6;
+  }
+  
+  .billing-details-title {
+    @apply text-2xl font-bold mb-6 border-b-2 border-gray-300 ;
+  }
+  
+  .billing-details-content {
+    @apply bg-gray-50  p-4 rounded-lg shadow-sm;
+  }
+  
+  .billing-details-list {
+    @apply space-y-4;
+  }
+  
+  .billing-details-item {
+    @apply text-gray-700 ;
+  }
+  
+  .billing-details-item-value {
+    @apply ml-2 text-gray-900 ;
+  }
+  
+  .billing-edit-button {
+    @apply mt-6 btn btn-primary w-full;
+  }
+  
+  .billing-form {
+    @apply space-y-4;
+  }
+  
+  .billing-form-label {
+    @apply block text-gray-700 ;
+  }
+  
+  .billing-form-input {
+    @apply input input-bordered w-full;
+  }
+  
+  .billing-save-button {
+    @apply mt-6 btn btn-primary w-full;
+  }
+  
+  .signed-out-message {
+    @apply text-gray-900 ;
+  }
+  
+
+
+/* Dark theme styles */
+
+[data-theme='dark'] .cart-item-container {
+    background-color: hsl(216, 29%, 13%);
+  }  
+
+  [data-theme='dark'] .billing-details-container {
+    background-color: hsl(216, 29%, 13%);
+  }    
+  [data-theme='dark'] .billing-details-content {
+    background-color: hsl(216, 29%, 13%);
+  }    
+
+  [data-theme='dark'] .cart-item-info {
+    color: #F0F0F0;
+  }    
+  [data-theme='dark'] .cart-item-name {
+    color: white;
+  }
+  [data-theme='dark'] .cart-quantity-text {
+    color: white;
+  }
+  [data-theme='dark'] .cart-total {
+    color: white;
+  }
+  [data-theme='dark'] .payment-method-title {
+    color: #F0F0F0;
+  }
+  [data-theme='dark'] .payment-method-label {
+    color: #969696;
+  }
+
+
+
+  /* billing detail content */
+
+
+  [data-theme='dark'] strong {
+    color: #F0F0F0;
+  }
+
+  [data-theme='dark'] span {
+    color: #F0F0F0;
+  }

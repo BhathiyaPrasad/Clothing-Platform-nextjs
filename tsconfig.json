@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+    
+    },
+   
+    "types":["node", "jest", "@testing-library/jest-dom"],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true // Enforces strict null checks.
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts" // Includes types from the .next directory.
+  ],
+  "exclude": [
+    "node_modules" // Excludes the node_modules directory.
+  ]
+}

@@ -1,0 +1,19 @@
+[data-theme='dark'] .table {
+    color: rgb(214, 193, 193); /* Lighter text color for dark mode */
+  }
+  [data-theme='dark'] .tableheaders {
+    color: rgb(231, 204, 204); /* Lighter text color for dark mode */
+  }  
+
+
+
+@media (min-width: 375px) and (max-width: 400px) {
+   .tableheaders{
+    font-size: smaller;
+   }
+   .tabledata{
+    font-size: smaller;
+   }
+   }
+  
+  

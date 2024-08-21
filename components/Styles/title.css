@@ -1,0 +1,51 @@
+.center {
+  align-items: center;
+  text-align: center;
+}
+.title {
+     
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-rendering: optimizeLegibility;
+    border: 0;
+    font: inherit;
+    touch-action: manipulation;
+    font-weight: inherit;
+    text-decoration: none;
+    outline: 0;
+    transition: color .1s linear;
+    padding: 0;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 40px;
+    line-height: 1.5;
+    @apply btn btn-ghost text-2xl font-mono;
+  }
+  
+  /* Media Queries */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .title {
+      font-size: 25px;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 768px) {
+    .title {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .title {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .title {
+      font-size: 15px;
+    }
+  }
+  

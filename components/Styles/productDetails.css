@@ -1,0 +1,199 @@
+/* Add the following styles to your productDetails.css */
+
+.active-tab {
+color: #4f46e5; /* Indigo color */
+border-bottom: 2px solid #4f46e5; /* Indigo color */
+}
+
+.inactive-tab {
+color: #4b5563; /* Gray color */
+border-bottom: 2px solid transparent;
+}
+
+.flex {
+display: flex;
+}
+
+.space-x-2 > * + * {
+margin-left: 0.5rem; /* Space between buttons */
+}
+
+.ml-auto {
+margin-left: auto;
+}
+
+.py-2 {
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+}
+
+.px-1 {
+padding-left: 0.25rem;
+padding-right: 0.25rem;
+}
+
+.border-0 {
+border: none;
+}
+
+.border-b-2 {
+border-bottom-width: 2px;
+}
+
+.cursor-pointer {
+cursor: pointer;
+}
+
+.w-8 {
+width: 2rem;
+}
+
+.h-8 {
+height: 2rem;
+}
+
+.rounded-full {
+border-radius: 9999px;
+}
+
+.border-2 {
+border-width: 2px;
+}
+
+.border-gray-300 {
+--tw-border-opacity: 1;
+border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+}
+
+.hover\\:border-blue-600:hover {
+--tw-border-opacity: 1;
+border-color: rgba(37, 99, 235, var(--tw-border-opacity));
+}
+
+.focus\\:outline-none:focus {
+outline: 2px solid transparent;
+outline-offset: 2px;
+}
+
+.focus\\:ring-2:focus {
+box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
+}
+
+.bg-indigo-500 {
+--tw-bg-opacity: 1;
+background-color: rgba(67, 56, 202, var(--tw-bg-opacity));
+}
+
+.hover\\:bg-indigo-600:hover {
+--tw-bg-opacity: 1;
+background-color: rgba(79, 70, 229, var(--tw-bg-opacity));
+}
+/* Dark Mode Styles */
+
+
+[data-theme='dark'] .border-gray-300 {
+border-color: rgba(75, 85, 99, 1); /* Darker border color for dark mode */
+}
+
+[data-theme='dark'] .text-gray-500 {
+color: rgba(156, 163, 175, 1); /* Darker text color for dark mode */
+}
+
+[data-theme='dark'] .text-gray-900 {
+color: rgba(255, 255, 255, 1); /* Lighter text color for dark mode */
+}
+[data-theme='dark'] .leading-relaxed {
+color: rgba(255, 255, 255, 1); /* Lighter text color for dark mode */
+}
+[data-theme='dark'] .flex-grow {
+color: rgb(202, 180, 180); /* Lighter text color for dark mode */
+}
+[data-theme='dark'] .text-gray-500 {
+color: rgba(202, 180, 180); /* Lighter text color for dark mode */
+}
+
+[data-theme='dark'] .bg-indigo-500 {
+background-color: rgba(67, 56, 202, 1); /* Keep the same in dark mode */
+}
+
+[data-theme='dark'] .w-8 {
+color: rgb(0, 0, 0); /* Keep the same in dark mode */
+font-weight: 500;
+background-color: rgb(143, 127, 127);
+}
+
+[data-theme='dark'] .hover\:bg-indigo-600:hover {
+background-color: rgba(79, 70, 229, 1); /* Keep the same in dark mode */
+}
+
+[data-theme='dark'] .text-gray-500 {
+color: rgba(202, 180, 180); /* Keep the same in dark mode */
+}
+[data-theme='dark'] .title-fonts {
+  color: rgb(223, 35, 35); /* Keep the same in dark mode */
+  }
+
+[data-theme='dark'] .border-b-2 {
+border-bottom-width: 2px;
+border-bottom-color: rgba(67, 56, 202, 1); /* Indigo color for active tab in dark mode */
+}
+
+/* Light Mode Styles */
+.mainDiv {
+@apply mt-2 flex justify-between overflow-x-auto whitespace-nowrap p-2;
+
+height: auto;
+}
+
+.border-gray-300 {
+border-color: rgba(209, 213, 219, 1); /* Light border color */
+}
+
+.text-gray-500 {
+color: rgba(107, 114, 128, 1); /* Gray text color */
+}
+
+.text-gray-900 {
+color: rgba(17, 24, 39, 1); /* Dark text color */
+}
+
+.bg-indigo-500 {
+background-color: rgba(67, 56, 202, 1); /* Indigo color */
+}
+
+.hover\:bg-indigo-600:hover {
+background-color: rgba(79, 70, 229, 1); /* Darker Indigo color on hover */
+}
+
+.border-b-2 {
+border-bottom-width: 2px;
+border-bottom-color: transparent; /* Default border color for inactive tabs */
+}
+
+/* Add styles for active and inactive tabs */
+.active-tab {
+color: #4f46e5; /* Indigo color */
+border-bottom: 2px solid #4f46e5; /* Indigo color */
+}
+
+.inactive-tab {
+color: #4b5563; /* Gray color */
+border-bottom: 2px solid transparent;
+}
+
+
+@media (min-width: 375px) and (max-width: 425px) {
+  .leading-relaxed {
+    font-size: 13px;
+  }
+ 
+}
+
+@media (min-width: 300px) and (max-width: 375px) {
+  .leading-relaxed {
+    font-size: 11px;
+  }
+  .title-fonts{
+    font-size:1rem ;
+  }
+}
