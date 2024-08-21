@@ -10,7 +10,7 @@ type MainLayoutProps = {
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <div data-theme="dark">
+    <div data-theme="valentine">
       <Header />
       <main>{children}</main>
       
