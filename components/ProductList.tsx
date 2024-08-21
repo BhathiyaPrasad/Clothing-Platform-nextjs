@@ -24,7 +24,7 @@ type Product = {
 const orgDocId = "20240711-1011-SaluniFashion";
 
 
-const defaultImageUrl = 'https://img.freepik.com/free-vector/red-grunge-style-coming-soon-design_1017-26691.jpg?w=1380&t=st=1724233882~exp=1724234482~hmac=a2383e2609d971fd264ada9a0322fe63ccf04950d6e5147243336be56aafad91' // Replace with your default image URL
+const defaultImageUrl = 'https://firebasestorage.googleapis.com/v0/b/freidea-pos-img/o/20240711-1011-SaluniFashion%2FImages%2FProducts%2FbackupImage.jpg?alt=media&token=1246d87a-6de4-4494-b59b-2965bc18d629' // Replace with your default image URL
 const storage = getStorage();
 
 async function getImageDownloadURL(imagePath: string): Promise<string> {
