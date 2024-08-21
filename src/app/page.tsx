@@ -20,13 +20,7 @@ export default function Home() {
         type=''
       />
      
-      <ProductList
-        category="women"
-        order=">="
-        limits={12}
-        group='Item_ID_Auto'
-        type=''
-      />
+  
     </MainLayout>
   );
 }
