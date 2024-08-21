@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
- 
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -10,9 +9,15 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.freepik.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
-   // output: 'export',
+  // output: 'export',
 };
 
 export default nextConfig;
