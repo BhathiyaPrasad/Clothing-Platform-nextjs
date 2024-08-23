@@ -10,8 +10,8 @@ const Footer = () => (
     <h6 className="footer-title">Company</h6>
     <Link href="" className="link link-hover">About us</Link>
     <Link href="" className="link link-hover">Contact</Link>
-    <Link href="" className="link link-hover">Jobs</Link>
-    <Link href="" className="link link-hover">Press kit</Link>
+    
+    
   </nav>
   <nav>
     <h6 className="footer-title">CONTACT</h6>
