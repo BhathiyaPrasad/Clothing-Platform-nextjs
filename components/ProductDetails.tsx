@@ -259,12 +259,12 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
                   Size Chart
                 </a>
               </div>
-              {activeTab === "sizeChart" && <div className='pl-10 ml-10' > <Image
+              {activeTab === "sizeChart" && <div className='' > <Image
                            src={thumsizechart}
                            alt="Thumbnail 4"
-                           className="w-full sm:w-3/4 md:w-2/3 lg:w-full h-auto object-cover object-center rounded"
-                           style={{ width: "400px", marginLeft: "10px", borderRadius: "10px" }}
-                           width={400}
+                           className="w-full sm:w-4/4 md:w-3/3 lg:w-full h-auto object-cover object-center rounded"
+                           style={{ width: "auto", marginLeft: "10px", borderRadius: "10px" }}
+                           width={600}
                            height={600}
                            loading="lazy"
               /></div>}
