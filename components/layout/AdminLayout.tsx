@@ -9,7 +9,7 @@ type AdminLayoutProps = {
 
 const AdminLayout = ({ children }: AdminLayoutProps) => {
   return (
-    <div data-theme="light">
+    <div data-theme="winter">
       <Header />
       <main>{children}</main>
       <Footer />

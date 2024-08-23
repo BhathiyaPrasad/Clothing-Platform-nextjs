@@ -259,12 +259,12 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
                   Size Chart
                 </a>
               </div>
-              {activeTab === "sizeChart" && <div className='pl-10 ml-10' > <Image
+              {activeTab === "sizeChart" && <div className='' > <Image
                            src={thumsizechart}
                            alt="Thumbnail 4"
-                           className="w-full sm:w-3/4 md:w-2/3 lg:w-full h-auto object-cover object-center rounded"
-                           style={{ width: "400px", marginLeft: "10px", borderRadius: "10px" }}
-                           width={400}
+                           className="w-full"
+                           style={{ width: "800", marginLeft: "10px", borderRadius: "10px" }}
+                           width={600}
                            height={600}
                            loading="lazy"
               /></div>}
@@ -327,18 +327,18 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
                   
                    </span></div> */}
                   <div className="flex items-center justify-between mt-4">
-                    <span className="title-font font-medium text-2xl font-Roboto">
+                  <span className="title-font font-medium text-lg sm:text-2xl font-Roboto">
                       {formatPrice(product.Sales_Price)}
                     </span>
                     <div className="flex space-x-5">
-                      <button className="btn btn-primary" onClick={() => buyNow()}>
+                    <button className="btn btn-primary text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3" onClick={() => buyNow()}>
                         Buy Now
                       </button>
-                      <button className="btn btn-primary" onClick={() => addToCart(product)}>
+                      <button className="btn btn-primary text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 flex items-center justify-center" onClick={() => addToCart(product)}>
                         Add To
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6 ml-2"
+                          className="h-5 w-5 sm:h-6 sm:w-6 ml-2"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
