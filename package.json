@@ -23,7 +23,7 @@
     "embla-carousel-class-names": "^8.1.8",
     "embla-carousel-react": "^8.1.8",
     "firebase": "^10.12.3",
-    "next": "14.2.5",
+    "next": "14.2.12",
     "next-auth": "^4.24.7",
     "pnpm": "^9.7.1",
     "react": "^18",
