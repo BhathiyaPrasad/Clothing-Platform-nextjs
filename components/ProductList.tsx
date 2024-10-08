@@ -57,7 +57,7 @@ const ProductList = (props) => {
           where("Discount", props.order, "0"),
           where("Brand", "==", props.type),
           orderBy(props.group, "desc"),
-          limit(props.limits)
+           limit(props.limits)
         );
 
         const querySnapshot = await getDocs(itemsQuery);
@@ -65,8 +65,10 @@ const ProductList = (props) => {
 
         for (const doc of querySnapshot.docs) {
           const product = { id: doc.id, ...doc.data() } as Product;
-          const imageUrl = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product_${product.Item_ID_Auto}.png`);
-          const imageUrl2 = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product2_${product.Item_ID_Auto}.png`)
+          const ID =  product.Item_ID_Auto.toString();
+          const formattedProductId = ID.replace(/\//g, '_');
+          const imageUrl = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product_${formattedProductId}.png`);
+          const imageUrl2 = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product2_${formattedProductId}.png`)
           product.imageUrl = imageUrl;
           product.imageUrl2 = imageUrl2
           productsArray.push(product);

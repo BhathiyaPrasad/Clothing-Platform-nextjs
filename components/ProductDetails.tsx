@@ -78,11 +78,13 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
       const productDoc = await getDoc(productDocRef);
       if (productDoc.exists()) {
         const productData = productDoc.data() as Product;
-        const imageUrl = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product_${productData.Item_ID_Auto}.png`);
-        const imageUrl2 = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product2_${productData.Item_ID_Auto}.png`);
-        const imageUrl3 = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product3_${productData.Item_ID_Auto}.png`);
-        const imageUrl4 = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product4_${productData.Item_ID_Auto}.png`);
-        const sizeChart = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/SizeCharts/Product_${productData.Item_ID_Auto}.png`);
+        const ID =  productData.Item_ID_Auto.toString();
+        const formattedProductId = ID.replace(/\//g, '_');
+        const imageUrl = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product_${formattedProductId}.png`);
+        const imageUrl2 = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product2_${formattedProductId}.png`);
+        const imageUrl3 = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product3_${formattedProductId}.png`);
+        const imageUrl4 = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product4_${formattedProductId}.png`);
+        const sizeChart = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/SizeCharts/Product_${formattedProductId}.png`);
 
         productData.imageUrl = imageUrl;
         productData.imageUrl2 = imageUrl2;
