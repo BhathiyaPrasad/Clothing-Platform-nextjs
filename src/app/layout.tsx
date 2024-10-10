@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import FloatingSocialButton from "@components/common/FloatButton";
 
 const inter = Roboto({
   weight: '400',
@@ -24,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
 
-
+  <div><FloatingSocialButton/></div>
         {children}
      
       </body>
