@@ -5,7 +5,7 @@ import Hero from "@components/Hero";
 import Title from "@components/common/Title";
 import ProductList from "@components/ProductList";
 import './globals.css';
-import { ClerkProvider } from "@clerk/nextjs";
+
 
 export default function Home() {
   return (
