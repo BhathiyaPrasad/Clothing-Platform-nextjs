@@ -3,6 +3,7 @@
 import { useParams } from 'next/navigation';
 import MainLayout from '@components/layout/MainLayout';
 import ProductDetails from '@components/ProductDetails';
+import SkeletonLoader from '@components/common/ProductDetailsLoading';
 import '../../../../src/app/globals.css';
 
 const ProductDetailsPage = () => {
@@ -13,7 +14,7 @@ const ProductDetailsPage = () => {
 
   return (
     <MainLayout>
-      {productId ? <ProductDetails productId={productId} /> : <p>Loading......</p>}
+      {productId ? <ProductDetails productId={productId} /> : <SkeletonLoader/>}
     </MainLayout>
   );
 };
