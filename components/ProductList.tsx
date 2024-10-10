@@ -28,25 +28,30 @@ const defaultImageUrl ='https://firebasestorage.googleapis.com/v0/b/freidea-pos-
 const storage = getStorage();
 
 async function getImageDownloadURL(imagePath: string): Promise<string> {
+  if (!imagePath) {
+    console.warn("Image path is missing, using default image.");
+    return defaultImageUrl;
+  }
   try {
     const imageRef = ref(storage, imagePath);
     const imageUrl = await getDownloadURL(imageRef);
     return imageUrl;
   } catch (error) {
-    console.error("Error getting image download URL:", error);
+    // console.error(`Error getting image download URL for path: ${imagePath}`, error);
     return defaultImageUrl; // Return default image URL on error
   }
 }
 
 const ProductList = (props) => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        setLoading(true);
         const itemsRef = collection(doc(db, "organizations", orgDocId), "items");
 
         const itemsQuery = query(
