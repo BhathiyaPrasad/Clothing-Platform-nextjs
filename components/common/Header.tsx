@@ -21,11 +21,11 @@ const Header = () => {
     <>
       <div className="sticky top-0 z-50 bg-white shadow-md">
         {/* Top Announcement Bar */}
-        <div className="bg-gray-200 text-center py-2 text-sm text-gray-900">Island wide cash on delivery</div>
+        <div className="bg-gray-200 text-center py-2 text-sm text-gray-900 font-black">ISLAND WIDE CASH ON DELIVERY</div>
 
         {/* Main Header Section */}
         <div className="navbar container mx-auto px-2 py-3 flex items-center justify-between">
-   
+
           <div className="lg:hidden">
             <div className="dropdown">
               <div tabIndex={0} className="btn btn-ghost">
@@ -102,26 +102,31 @@ const Header = () => {
           <div className="flex items-center space-x-6">
             {/* Cart Button */}
             <div className="relative">
-  <Link href="/product/cart">
-    <p className="text-gray-700 hover:text-black">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-      {items.length > 0 && (
-        <span className="absolute -bottom-1 left-4 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded-full">
-          {items.length}
-        </span>
-      )}
-    </p>
-  </Link>
-</div>
+              <Link href="/product/cart">
+                <p className="text-gray-700 hover:text-black">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  {items.length > 0 && (
+                    <span className="absolute -bottom-1 left-4 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded-full">
+                      {items.length}
+                    </span>
+                  )}
+                </p>
+              </Link>
+            </div>
 
 
             {/* Sign-In/Account Button */}
             <div className="text-gray-700 hover:text-black">
               <SignedOut>
                 <SignInButton>
-                  <button className="btn btn-outline">Sign In</button>
+                  <Link href="/sign-in">
+                    <button className="bg-black-400 text-black  py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition duration-300 ease-in-out transform hover:scale-105">
+                      Sign In
+                    </button>
+                  </Link>
+
                 </SignInButton>
               </SignedOut>
               <SignedIn>
