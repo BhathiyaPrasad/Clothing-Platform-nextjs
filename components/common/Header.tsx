@@ -1,11 +1,10 @@
-" use client"
+"use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import '../Styles/header.css';
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
-import {SaluniLogo} from '../../../assests/images/SaluniLogo.jpg';
-
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import SaluniLogo from '../../assests/images/final1.2.jpg';
 
 const Header = () => {
   const [items, setItems] = useState([]);
@@ -20,126 +19,109 @@ const Header = () => {
 
   return (
     <>
-      <div className="navbars">Island wide cash on delivery</div>
-      <div className="navbar" style={{ margin: '10px' }}>
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-               
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+      <div className="sticky top-0 z-50 bg-white shadow-md">
+        {/* Top Announcement Bar */}
+        <div className="bg-gray-200 text-center py-2 text-sm text-gray-900">Island wide cash on delivery</div>
+
+        {/* Main Header Section */}
+        <div className="navbar container mx-auto px-2 py-3 flex items-center justify-between">
+   
+          <div className="lg:hidden">
+            <div className="dropdown">
+              <div tabIndex={0} className="btn btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </svg>
+              </div>
+              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                <li><Link href="/">HOME</Link></li>
+                <li>
+                  <details>
+                    <summary>MEN</summary>
+                    <ul className="p-2">
+                      <li><Link href="/product/men/shirts">Shirts</Link></li>
+                      <li><Link href="/product/men/trousers">Trousers</Link></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details>
+                    <summary>WOMEN</summary>
+                    <ul className="p-2">
+                      <li><Link href="/product/women/shorts">Shorts</Link></li>
+                      <li><Link href="/product/women/skirts">Skirts</Link></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><Link href="/product/unisex">UNISEX</Link></li>
+                <li><Link href="/product/week">THIS WEEK</Link></li>
+                <li><Link href="/product/sale">SALE</Link></li>
+                <li><Link href="/product/accessories">ACCESSORIES</Link></li>
+                <li><Link href="/contact">CONTACT</Link></li>
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow text-lg"
-            >
-              <li>
-                <Link href="/">HOME</Link>
-              </li>
-              <li>
+          </div>
+
+          {/* Logo Section */}
+          <div className="flex-shrink-0">
+            <Link href="/">
+              <>
+                <Image src={SaluniLogo} width={100} height={80} alt="Saluni Logo" className="cursor-pointer" />
+              </>
+            </Link>
+          </div>
+
+
+          {/* Centered Navigation for Desktop */}
+          <div className="hidden lg:flex justify-center flex-grow">
+            <ul className="flex space-x-8 font-semibold text-gray-700">
+              <li><Link href="/">HOME</Link></li>
+              <li className="relative group">
                 <Link href="/product/men">MEN</Link>
-                <ul className="p-2">
-                  <li><Link href="/product/men/shirts">Shirts</Link></li>
-                  <li><Link href="/product/men/trousers">Trousers</Link></li>
+                <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 text-sm">
+                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/shirts">Shirts</Link></li>
+                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/trousers">Trousers</Link></li>
                 </ul>
               </li>
-              <li>
+              <li className="relative group">
                 <Link href="/product/women">WOMEN</Link>
-                <ul className="p-2">
-                  <li><Link href="/product/women/shorts">Shorts</Link></li>
-                  <li><Link href="/product/women/skirts">Skirts</Link></li>
+                <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 text-sm">
+                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/shorts">Shorts</Link></li>
+                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/skirts">Skirts</Link></li>
                 </ul>
               </li>
-              <Link href="/product/unisex">UNISEX</Link>
+              <li><Link href="/product/unisex">UNISEX</Link></li>
               <li><Link href="/product/week">THIS WEEK</Link></li>
               <li><Link href="/product/sale">SALE</Link></li>
               <li><Link href="/product/accessories">ACCESSORIES</Link></li>
               <li><Link href="/contact">CONTACT</Link></li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-3xl" href="/">SALUNI FASHION</a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li><Link href="/" className="text font-bold font-mono text-base">HOME</Link></li>
-            <li>
-              <details>
-                <summary><Link href="/product/men" className="text font-bold font-mono text-base">MEN</Link></summary>
-                <ul className="p-2">
-                  <li><Link href="/product/men/shirts">Shirts</Link></li>
-                  <li><Link href="/product/men/trousers">Trousers</Link></li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary><Link href="/product/women" className="text font-bold font-mono text-base">WOMEN</Link></summary>
-                <ul className="p-2">
-                  <li><Link href="/product/women/shorts">Shorts</Link></li>
-                  <li><Link href="/product/women/skirts">Skirts</Link></li>
-                </ul>
-              </details>
-            </li>
-            <li><Link href="/product/unisex" className="text font-bold font-mono text-base">UNISEX</Link></li>
-            <li><Link href="/product/week" className="text font-bold font-mono text-base">THIS WEEK</Link></li>
-            <li><Link href="/product/sale" className="text font-bold font-mono text-base">SALE</Link></li>
-            <li><Link href="/product/accessories" className="text font-bold font-mono text-base">ACCESSORIES</Link></li>
-            <li><Link href="/contact" className="text font-bold font-mono text-base">CONTACT</Link></li>
-          </ul>
-        </div>
-        <div className="navbar-end" style={{ display: 'flex', alignItems: 'center' }}>
-          <div className="dropdown dropdown-end" style={{ marginRight: '20px' }}>
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-              <div className="indicator">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-                <span className="badge badge-sm indicator-item">{items.length}</span>
-              </div>
-            </div>
-            <div
-              tabIndex={0}
-              className="card card-compact dropdown-content bg-base-100 z-50 mt-3 w-52 shadow"
-            >
-              <div className="card-body">
-                <span className="text-lg font-bold">{items.length} Items</span>
-                <span className="text-info"></span>
-                <div className="card-actions">
-                  <button className="btn btn-primary btn-block">
-                    <Link href="/product/cart">View cart</Link>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="dropdown dropdown-end">
-            <div className="clerk-buttons" style={{ marginRight: '10px' }}>
+
+          {/* User Actions: Cart and Sign-In */}
+          <div className="flex items-center space-x-6">
+            {/* Cart Button */}
+            <div className="relative">
+  <Link href="/product/cart">
+    <p className="text-gray-700 hover:text-black">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+      {items.length > 0 && (
+        <span className="absolute -bottom-1 left-4 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded-full">
+          {items.length}
+        </span>
+      )}
+    </p>
+  </Link>
+</div>
+
+
+            {/* Sign-In/Account Button */}
+            <div className="text-gray-700 hover:text-black">
               <SignedOut>
                 <SignInButton>
-                  <button className="btn btn-square">Sign In</button>
+                  <button className="btn btn-outline">Sign In</button>
                 </SignInButton>
               </SignedOut>
               <SignedIn>
