@@ -6,7 +6,7 @@ import { ref, getStorage, getDownloadURL } from 'firebase/storage';
 import { db } from '../utils/firebase';
 import ProductCard from './common/ProductCard';
 import './Styles/productlist.css';
-
+import Loading from './common/Loading'
 
 type Product = {
   id: string;
@@ -42,6 +42,7 @@ const ProductList = (props) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -87,7 +88,7 @@ const ProductList = (props) => {
   }, [props.category, props.group, props.limits, props.order, props.type , props.width]);
 
   if (loading) {
-    return <span className="loading loading-dots loading-md"></span>;
+    return <><Loading /></>
   }
 
   if (error) {
