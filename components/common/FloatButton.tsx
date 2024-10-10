@@ -33,9 +33,9 @@ const TikTokIcon = () => (
 
 const FloatingSocialButton = () => {
   const socialLinks = [
-    { name: 'Facebook', icon: FacebookIcon, url: 'https://facebook.com/your-page' },
-    { name: 'Instagram', icon: InstagramIcon, url: 'https://instagram.com/your-account' },
-    { name: 'TikTok', icon: TikTokIcon, url: 'https://tiktok.com/@your-account' }
+    { name: 'Facebook', icon: FacebookIcon, url: 'https://www.facebook.com/SaluniFashion' },
+    { name: 'Instagram', icon: InstagramIcon, url: 'https://www.instagram.com/saluni_fashion' },
+    { name: 'TikTok', icon: TikTokIcon, url: 'https://www.tiktok.com/@salunifashion' }
   ];
 
   return (

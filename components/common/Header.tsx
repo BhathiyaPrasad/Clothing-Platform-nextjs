@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import '../Styles/header.css';
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import {SaluniLogo} from '../../../assests/images/SaluniLogo.jpg';
+
 
 const Header = () => {
   const [items, setItems] = useState([]);
@@ -30,6 +32,7 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
+               
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"

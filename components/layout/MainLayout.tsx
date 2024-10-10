@@ -15,7 +15,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <main>{children}</main>
       
      
-      <Footer />
+      <div className="pt-10"><Footer /></div>
     </div>
   );
 };
