@@ -341,7 +341,7 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
                      className="
                      transform group-hover:scale-110 group-hover:fill-current
                      transition-all duration-300 ease-in-out "/>
-                     {/* <span>Wish List</span> */}
+                   
                      </button>
                       <button className="btn btn-outline btn-primary  hover:btn-primary  text-sm sm:text-base  px-4 py-2 sm:px-6 sm:py-3  transition-all duration-300 ease-in-out  flex items-center justify-center gap-2 group" onClick={() => addToCart(product)}>
                         Add To
