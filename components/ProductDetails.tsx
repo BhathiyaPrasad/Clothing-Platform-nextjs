@@ -9,13 +9,14 @@ import './Styles/productDetails.css';
 import { formatPrice } from '../utils/price';
 import { ref, getStorage, getDownloadURL } from 'firebase/storage';
 import { formatColor } from '@utils/color';
-
+import ProductDetailsLoading from './common/ProductDetailsLoading';
+import { Heart } from 'lucide-react';
 const orgDocId = "20240711-1011-SaluniFashion";
 const storage = getStorage();
 
 type ProductDetailsProps = {
   productId: string;
-  
+
 };
 
 type Product = {
@@ -23,7 +24,7 @@ type Product = {
   description: string;
   Sales_Price: number;
   id: string;
-  
+
   quantity: number;
   Cat_Name: string;
   src: string;
@@ -37,8 +38,8 @@ type Product = {
   Item_ID_Auto: number;
   colorCodes: string;
   colorNames: string;
-  color:string;
-  code:string;
+  color: string;
+  code: string;
 };
 
 
@@ -78,7 +79,7 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
       const productDoc = await getDoc(productDocRef);
       if (productDoc.exists()) {
         const productData = productDoc.data() as Product;
-        const ID =  productData.Item_ID_Auto.toString();
+        const ID = productData.Item_ID_Auto.toString();
         const formattedProductId = ID.replace(/\//g, '_');
         const imageUrl = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product_${formattedProductId}.png`);
         const imageUrl2 = await getImageDownloadURL(`gs://freidea-pos-img/20240711-1011-SaluniFashion/Images/Products/Product2_${formattedProductId}.png`);
@@ -120,7 +121,7 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
   };
 
   if (!product) {
-    return <span className="loading loading-dots loading-md"></span>;
+    return <ProductDetailsLoading />
   }
 
   const addToCart = (product: Product) => {
@@ -169,12 +170,12 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
       code: colorCodesArray[index]
     });
   }, []); // Start with an empty array of the correct type
-  
+
 
   console.log(result);
 
 
-  
+
   return (
     <>
       <section className="text-gray-600 body-font overflow-hidden">
@@ -262,13 +263,13 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
                 </a>
               </div>
               {activeTab === "sizeChart" && <div className='' > <Image
-                           src={thumsizechart}
-                           alt="Thumbnail 4"
-                           className="w-full"
-                           style={{ width: "800", marginLeft: "10px", borderRadius: "10px" }}
-                           width={600}
-                           height={600}
-                           loading="lazy"
+                src={thumsizechart}
+                alt="Thumbnail 4"
+                className="w-full"
+                style={{ width: "800", marginLeft: "10px", borderRadius: "10px" }}
+                width={600}
+                height={600}
+                loading="lazy"
               /></div>}
               {activeTab === "description" && (
                 <>
@@ -297,7 +298,7 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
                   <div className="flex border-t border-gray-200 py-2">
                     <span className="text-gray-500 font-Roboto text-sm mar">Color</span>
                     <span className="ml-auto flex space-x-2">
-                    {result.map((colorOption, index) => (
+                      {result.map((colorOption, index) => (
                         <button
                           key={index}
                           className={`w-8 h-8 rounded-full border-2 ${color === colorOption.color ? 'border-blue-600 ring-2 ring-blue-200' : 'border-gray-300'} flex items-center justify-center transition-transform transform hover:scale-110 hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500`}
@@ -314,7 +315,7 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
                         </button>
                       ))}
                     </span>
-                  
+
                   </div>
                   {/* <span>
                     
@@ -329,14 +330,20 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
                   
                    </span></div> */}
                   <div className="flex items-center justify-between mt-4">
-                  <span className="title-font font-medium text-lg sm:text-2xl font-Roboto">
+                    <span className=" title-font font-medium  text-lg sm:text-2xl font-Roboto  tracking-tight  leading-none mb-2  text-red-600">
                       {formatPrice(product.Sales_Price)}
                     </span>
+
                     <div className="flex space-x-5">
-                    <button className="btn btn-primary text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3" onClick={() => buyNow()}>
-                        Buy Now
-                      </button>
-                      <button className="btn btn-primary text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 flex items-center justify-center" onClick={() => addToCart(product)}>
+                    <button className="btn btn-outline btn-primary  hover:btn-primary  text-sm sm:text-base  px-4 py-2 sm:px-6 sm:py-3  transition-all duration-300 ease-in-out  flex items-center justify-center gap-2 group">
+                    <Heart 
+                   size={20} 
+                     className="
+                     transform group-hover:scale-110 group-hover:fill-current
+                     transition-all duration-300 ease-in-out "/>
+                     {/* <span>Wish List</span> */}
+                     </button>
+                      <button className="btn btn-outline btn-primary  hover:btn-primary  text-sm sm:text-base  px-4 py-2 sm:px-6 sm:py-3  transition-all duration-300 ease-in-out  flex items-center justify-center gap-2 group" onClick={() => addToCart(product)}>
                         Add To
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
