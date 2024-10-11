@@ -124,7 +124,7 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
     return <ProductDetailsLoading />
   }
 
-  const addToCart = (product: Product) => {
+   const addToCart = (product: Product) => {
     console.log("Order is processing", product);
 
     let existingItems = localStorage.getItem('Items');
@@ -157,8 +157,36 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
     router.push('/product/cart');
   };
 
-  const buyNow = () => {
-    router.push('/product/cart');
+  const addToWishList = (product: Product) => {
+   console.log("WishList is processing", product);
+
+    let existingItems = localStorage.getItem('wishlist');
+    let itemsArray;
+
+    try {
+      itemsArray = existingItems ? JSON.parse(existingItems) : [];
+    } catch (error) {
+      console.error("Error parsing existing items from localStorage", error);
+      itemsArray = [];
+    }
+
+    if (!Array.isArray(itemsArray)) {
+      itemsArray = [];
+    }
+
+    const productIndex = itemsArray.findIndex(item => item.UUID === product.UUID);
+
+    if (productIndex > -1) {
+      itemsArray[productIndex].quantity += 1;
+      itemsArray[productIndex].selectedsize = size;
+      itemsArray[productIndex].selectedcolor = color;
+      console.log("Product quantity incremented");
+    } else {
+      itemsArray.push({ ...product, quantity: 1, selectedsize: size, selectedcolor: color });
+      console.log("Product added to cart");
+    }
+
+    localStorage.setItem('wishlist', JSON.stringify(itemsArray));
   };
 
   const colorNamesArray = product.colorNames.split(";;");
@@ -335,7 +363,7 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
                     </span>
 
                     <div className="flex space-x-5">
-                    <button className="btn btn-outline btn-primary  hover:btn-primary  text-sm sm:text-base  px-4 py-2 sm:px-6 sm:py-3  transition-all duration-300 ease-in-out  flex items-center justify-center gap-2 group">
+                    <button className="btn btn-outline btn-primary  hover:btn-primary  text-sm sm:text-base  px-4 py-2 sm:px-6 sm:py-3  transition-all duration-300 ease-in-out  flex items-center justify-center gap-2 group" onClick={() => addToWishList(product)}>
                     <Heart 
                    size={20} 
                      className="
