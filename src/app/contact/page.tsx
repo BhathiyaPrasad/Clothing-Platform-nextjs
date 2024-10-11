@@ -1,10 +1,10 @@
 import React from 'react'
-import SkeletonLoader from '../../../components/common/ProductDetailsLoading'
+import FloatingWishlistButton from '../../../components/common/WishList'
 
 const page = () => {
   return (
     <div>
-    <SkeletonLoader/>
+    <FloatingWishlistButton/>
     </div>
     )
 }
