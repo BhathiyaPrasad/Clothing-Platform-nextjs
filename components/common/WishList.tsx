@@ -1,12 +1,25 @@
 'use client';
 // components/FloatingWishlistButton.tsx
 
-import React, { useState } from 'react';
+import React, { useState ,  useEffect } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { Heart } from 'lucide-react';
 
 const FloatingWishlistButton = () => {
-  const [wishlistItems, setWishlistItems] = useState<string[]>([]); // Example state for wishlist
+  interface WishlistItem {
+    Item_Name: string;
+  }
+  
+  const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([]); // Example state for wishlist
+
+useEffect(() => {
+    const itemsString = localStorage.getItem('wishlist');
+    if (itemsString) {
+      const storedItems = JSON.parse(itemsString);
+      setWishlistItems(storedItems);
+    }
+
+  }, []);
 
   return (
     <div>
@@ -29,21 +42,17 @@ const FloatingWishlistButton = () => {
                 X
               </button>
             </Dialog.Close>
-            <h2 className="text-2xl font-bold mb-5 text-center">Your Wish List</h2>
-            {wishlistItems.length > 0 ? (
-              <ul className="space-y-4">
-                {wishlistItems.map((item, index) => (
-                  <li
-                    key={index}
-                    className="border p-4 rounded-lg bg-gray-100 shadow hover:bg-gray-200 transition-colors duration-300"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-gray-600 text-center">No items in your wish list yet.</p>
-            )}
+            <h2 className="text-xl font-bold mb-5 text-center">Your Wish List</h2>
+             {wishlistItems.length > 0 ? (
+               <ul className="space-y-4">
+              {wishlistItems.map((item, index) => (
+             <li key={index} className="border p-4 rounded-lg bg-gray-100 shadow hover:bg-gray-200 transition-colors duration-300">
+                <div className="font-bold">{item.Item_Name || 'Unnamed Item'}</div>
+             </li>
+               ))} </ul>
+             ) : (
+              <p className="text-gray-600 text-center">No items in your wishlist yet.</p>
+             )}
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
