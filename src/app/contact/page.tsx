@@ -1,9 +1,12 @@
 import React from 'react'
+import SkeletonLoader from '../../../components/common/ProductDetailsLoading'
 
 const page = () => {
   return (
-    <div>Contact </div>
-  )
+    <div>
+    <SkeletonLoader/>
+    </div>
+    )
 }
 
 export default page
