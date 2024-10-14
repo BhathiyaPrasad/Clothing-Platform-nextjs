@@ -22,7 +22,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <div>
+    <div className='z-50'>
       <Dialog.Root>
         <Dialog.Trigger asChild>
           <button className="fixed bottom-5 right-5 bg-red-500 text-white p-4 rounded-full shadow-lg hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300 ease-in-out transform hover:scale-105">

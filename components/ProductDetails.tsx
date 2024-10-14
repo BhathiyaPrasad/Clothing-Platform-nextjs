@@ -395,8 +395,10 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
               )}
             </div>
           </div>
+       
+          <Reviews productId={productId} />
         </div>
-        <Reviews productId={productId} />
+        
       </section>
     </>
   );
