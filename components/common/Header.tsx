@@ -41,6 +41,8 @@ const Header = () => {
                     <ul className="p-2">
                       <li><Link href="/product/men/shirts">Shirts</Link></li>
                       <li><Link href="/product/men/trousers">Trousers</Link></li>
+                      <li><Link href="/product/men/t-shirts">T-Shirts</Link></li>
+                      <li><Link href="/product/men/shorts">Shorts</Link></li>
                     </ul>
                   </details>
                 </li>
@@ -50,6 +52,9 @@ const Header = () => {
                     <ul className="p-2">
                       <li><Link href="/product/women/shorts">Shorts</Link></li>
                       <li><Link href="/product/women/skirts">Skirts</Link></li>
+                      <li><Link href="/product/women/tops">Tops</Link></li>
+                      <li><Link href="/product/women/t-shirts">T-Shirts</Link></li>
+                      <li><Link href="/product/women/dresses">Dresses</Link></li>
                     </ul>
                   </details>
                 </li>
@@ -81,6 +86,8 @@ const Header = () => {
                 <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 text-sm">
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/shirts">Shirts</Link></li>
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/trousers">Trousers</Link></li>
+                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/t-shirts">T-Shirts</Link></li>
+                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/shorts">Shorts</Link></li>
                 </ul>
               </li>
               <li className="relative group">
@@ -88,6 +95,10 @@ const Header = () => {
                 <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 text-sm">
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/shorts">Shorts</Link></li>
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/skirts">Skirts</Link></li>
+                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/tops">Tops</Link></li>
+                  <li className="py-2 px-2 hover:bg-gray-200"><Link href="/product/women/t-shirts">T-Shirts</Link></li>
+                  <li className="py-2 px-2 hover:bg-gray-200"><Link href="/product/women/dresses">Dresses</Link></li>
+
                 </ul>
               </li>
               <li><Link href="/product/unisex">UNISEX</Link></li>
