@@ -66,7 +66,7 @@ const FloatingWishlistButton: React.FC = () => {
                 {wishlistItems.map((item, index) => (
                   <li key={index} className="border p-4 rounded-lg bg-gray-100 shadow hover:bg-gray-200 transition-colors duration-300">
                     <div className="flex items-center space-x-4">
-                      <Image src={item.imageUrl} alt={item.Item_Name} className="w-16 h-16 rounded-lg object-cover" />
+                      <Image src={item.imageUrl} alt={item.Item_Name} className="w-16 h-16 rounded-lg object-cover" width={100} height={100} />
                       <div>
                         <div className="font-bold">{item.Item_Name || 'Unnamed Item'}</div>
                         <div className="text-gray-600">Price: {item.Sales_Price || 'N/A'}</div>
