@@ -22,10 +22,10 @@ const ProductReviewComponent = ({ productId }) => {
                 const orgDocId = 'InterithmT4';
                 const reviewRef = collection(doc(db, "organizations", orgDocId), "reviews");
                 const reviewQuery = query(
-                    reviewRef, 
+                    reviewRef,
                     where("productId", "==", productId)
                 );
-                
+
                 const querySnapshot = await getDocs(reviewQuery);
                 const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Review));
                 setReviews(data);
@@ -37,7 +37,7 @@ const ProductReviewComponent = ({ productId }) => {
         };
         fetchReviews();
     }, [productId]); // Include productId in the dependency array
-    
+
 
 
 
@@ -67,7 +67,7 @@ const ProductReviewComponent = ({ productId }) => {
                 productId: reviewWithId.productId,
                 rating: reviewWithId.rating,
                 comment: reviewWithId.comment,
-                Date:new Date().toLocaleDateString()
+                Date: new Date().toLocaleDateString()
 
             })
         }
@@ -82,8 +82,6 @@ const ProductReviewComponent = ({ productId }) => {
 
     return (
         <div className="max-w-4xl mx-auto p-8 rounded-box z-index-1">
-            {/* <h2 className="text-3xl font-bold mb-6 text-center">Customer Reviews</h2> */}
-
             <div className="card bg-base-100 shadow-xl mb-8">
                 <div className="card-body">
                     <h3 className="card-title text-2xl mb-4">Write a Review</h3>
@@ -136,7 +134,6 @@ const ProductReviewComponent = ({ productId }) => {
                     </div>
                 </div>
             </div>
-
             <div className="space-y-6">
                 {reviews.map((review) => (
                     <div key={review.id} className="card bg-base-100 shadow-xl">
