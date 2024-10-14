@@ -31,7 +31,7 @@ const ProductReviewComponent = ({ productId }) => {
             setLoading(true);
             setError('');
             try {
-                const orgDocId = 'InterithmT4';
+                const orgDocId = '20240711-1011-SaluniFashion';
                 const reviewRef = collection(doc(db, 'organizations', orgDocId), 'reviews');
                 const reviewQuery = query(reviewRef, where('productId', '==', productId));
 
@@ -71,7 +71,7 @@ const ProductReviewComponent = ({ productId }) => {
         setNewReview({ rating: 0, comment: '', name: '' });
 
         try {
-            const orgDocId = 'InterithmT4';
+            const orgDocId = '20240711-1011-SaluniFashion';
             const itemsRef = collection(doc(db, 'organizations', orgDocId), 'reviews');
 
             await addDoc(itemsRef, {
