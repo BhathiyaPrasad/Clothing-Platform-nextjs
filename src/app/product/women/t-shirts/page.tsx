@@ -10,11 +10,11 @@ export default function skirts () {
     return (
      <MainLayout> 
      <ProductList
-     category=""
+     category="women"
      order=">="
      limit={12}
      group='Brand'
-     type='skirts'
+     type='t-shirts'
      /></MainLayout>
     )
 }

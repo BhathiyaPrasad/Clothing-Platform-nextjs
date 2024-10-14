@@ -13,7 +13,7 @@ export default function women () {
      order=">="
      limit={12}
      group='Brand'
-     type=''
+     type='tops'
       />
      </MainLayout>
     )
