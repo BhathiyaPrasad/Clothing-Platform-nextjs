@@ -5,11 +5,12 @@ import { db } from '../utils/firebase';
 
 const ProductReviewComponent = ({ productId }) => {
     interface Review {
-        id: number;
+        id: string;
         rating: number;
         comment: string;
         name: string;
         productId: string;  // Add productId to the Review interface
+        Date: string;
     }
 
     const [reviews, setReviews] = useState<Review[]>([]);
@@ -53,7 +54,7 @@ const ProductReviewComponent = ({ productId }) => {
             alert('Please provide a rating, name, and comment');
             return;
         }
-        const reviewWithId = { ...newReview, id: Date.now(), productId }; // Add productId here
+        const reviewWithId = { ...newReview, id: Date.now().toString(), productId, Date: new Date().toLocaleDateString() }; // Add productId and Date here
         setReviews([...reviews, reviewWithId]);
         setNewReview({ rating: 0, comment: '', name: '' });
 
