@@ -11,6 +11,7 @@ import { ref, getStorage, getDownloadURL } from 'firebase/storage';
 import { formatColor } from '@utils/color';
 import ProductDetailsLoading from './common/ProductDetailsLoading';
 import { Heart } from 'lucide-react';
+import Reviews from './Reviews';
 const orgDocId = "20240711-1011-SaluniFashion";
 const storage = getStorage();
 
@@ -394,7 +395,10 @@ const ProductDetails = ({ productId }: ProductDetailsProps) => {
               )}
             </div>
           </div>
+       
+          <Reviews productId={productId} />
         </div>
+        
       </section>
     </>
   );

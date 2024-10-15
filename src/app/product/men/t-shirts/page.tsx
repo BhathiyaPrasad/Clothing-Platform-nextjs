@@ -14,7 +14,7 @@ export default function shirts () {
      order=">="
      limit={12}
      group='Brand'
-     type='shirt'
+     type='t-shirts'
      /></MainLayout>
     )
 }

@@ -1,3 +1,4 @@
+
 'use client'
 import MainLayout from "@components/layout/MainLayout";
 import React from "react";
@@ -5,16 +6,15 @@ import ProductList from '../../../../../components/ProductList';
 import '../../../../app/globals.css'
 
 
-
-export default function shirts () {
+export default function skirts () {
     return (
      <MainLayout> 
      <ProductList
-     category="men"
+     category="women"
      order=">="
      limit={12}
      group='Brand'
-     type='shirt'
+     type='t-shirts'
      /></MainLayout>
     )
 }

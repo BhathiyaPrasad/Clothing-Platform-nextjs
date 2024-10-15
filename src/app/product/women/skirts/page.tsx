@@ -6,8 +6,6 @@ import ProductList from '../../../../../components/ProductList';
 import '../../../../app/globals.css'
 
 
-
-
 export default function skirts () {
     return (
      <MainLayout> 
