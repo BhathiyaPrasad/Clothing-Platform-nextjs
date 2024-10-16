@@ -79,11 +79,11 @@ const Header = () => {
 
           {/* Centered Navigation for Desktop */}
           <div className="hidden lg:flex justify-center flex-grow">
-            <ul className="flex space-x-8 font-semibold text-gray-700">
+            <ul className="flex space-x-8 font-semibold text-white hover:text-white">
               <li><Link href="/">HOME</Link></li>
               <li className="relative group">
                 <Link href="/product/men">MEN</Link>
-                <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 text-sm">
+                <ul className="absolute hidden group-hover:block bg-black shadow-lg py-2 text-sm text-white">
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/shirts">Shirts</Link></li>
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/trousers">Trousers</Link></li>
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/t-shirts">T-Shirts</Link></li>
@@ -92,7 +92,7 @@ const Header = () => {
               </li>
               <li className="relative group">
                 <Link href="/product/women">WOMEN</Link>
-                <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 text-sm">
+                <ul className="absolute hidden group-hover:block bg-black shadow-lg py-2 text-sm text-white">
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/shorts">Shorts</Link></li>
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/skirts">Skirts</Link></li>
                   <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/tops">Tops</Link></li>
@@ -114,7 +114,7 @@ const Header = () => {
             {/* Cart Button */}
             <div className="relative">
               <Link href="/product/cart">
-                <p className="text-white-700 hover:text-black">
+                <p className="text-white-700 hover:text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
@@ -133,7 +133,7 @@ const Header = () => {
               <SignedOut>
                 <SignInButton>
                   <Link href="/sign-in">
-                    <button className="bg-black-400 text-black  py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition duration-300 ease-in-out transform hover:scale-105">
+                    <button className="bg-white-400 text-white  py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition duration-300 ease-in-out transform hover:scale-105">
                       Sign In
                     </button>
                   </Link>
