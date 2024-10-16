@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-// import '../Styles/header.css'; //removed for fix the build error
+ import '../Styles/header.css'; //removed for fix the build error
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import SaluniLogo from '../../assests/images/final1.3.jpg';
 
@@ -84,20 +84,20 @@ const Header = () => {
               <li className="relative group">
                 <Link href="/product/men">MEN</Link>
                 <ul className="absolute hidden group-hover:block bg-black shadow-lg py-2 text-sm text-white">
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/shirts">Shirts</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/trousers">Trousers</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/t-shirts">T-Shirts</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/shorts">Shorts</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800 text-white"><Link href="/product/men/shirts">Shirts</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/men/trousers">Trousers</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/men/t-shirts">T-Shirts</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/men/shorts">Shorts</Link></li>
                 </ul>
               </li>
               <li className="relative group">
                 <Link href="/product/women">WOMEN</Link>
                 <ul className="absolute hidden group-hover:block bg-black shadow-lg py-2 text-sm text-white">
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/shorts">Shorts</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/skirts">Skirts</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/tops">Tops</Link></li>
-                  <li className="py-2 px-2 hover:bg-gray-200"><Link href="/product/women/t-shirts">T-Shirts</Link></li>
-                  <li className="py-2 px-2 hover:bg-gray-200"><Link href="/product/women/dresses">Dresses</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/women/shorts">Shorts</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/women/skirts">Skirts</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/women/tops">Tops</Link></li>
+                  <li className="py-2 px-2 hover:bg-black-800"><Link href="/product/women/t-shirts">T-Shirts</Link></li>
+                  <li className="py-2 px-2 hover:bg-black-800"><Link href="/product/women/dresses">Dresses</Link></li>
 
                 </ul>
               </li>

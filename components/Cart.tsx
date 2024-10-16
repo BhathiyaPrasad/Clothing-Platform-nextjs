@@ -27,14 +27,14 @@ interface BillingDetails {
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'gateway'>('cod');
+  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'gateway' | 'koko'>('cod');
   const { user } = useUser();
   const [billingDetails, setBillingDetails] = useState<BillingDetails>({
     name: user?.fullName || '',
     address: '',
     city: '',
     postalCode: '',
-    number:0
+    number: 0
   });
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -83,7 +83,11 @@ const Cart = () => {
     if (paymentMethod === 'cod') {
       productOrder(cartItems);
       alert('Order placed successfully with Cash on Delivery!');
-    } else {
+    }
+    else if (paymentMethod === 'koko') {
+      window.location.href = '/koko-payment-gateway';
+    }
+    else {
       window.location.href = '/payment-gateway';
     }
   };
@@ -177,7 +181,7 @@ const Cart = () => {
                   />
                   <label htmlFor="cod" className="payment-method-label">Cash on Delivery</label>
                 </div>
-                {/* <div className="payment-method-option">
+                <div className="payment-method-option">
                   <input
                     type="radio"
                     id="gateway"
@@ -188,7 +192,19 @@ const Cart = () => {
                     className="payment-method-radio"
                   />
                   <label htmlFor="gateway" className="payment-method-label">Online Payment</label>
-                </div> */}
+                </div>
+                <div className="payment-method-option">
+                  <input
+                    type="radio"
+                    id="koko"
+                    name="paymentMethod"
+                    value="koko"
+                    checked={paymentMethod === 'koko'}
+                    onChange={() => setPaymentMethod('koko')}
+                    className="payment-method-radio"
+                  />
+                  <label htmlFor="koko" className="payment-method-label">Koko Payment</label>
+                </div>
               </div>
               <button
                 onClick={handlePlaceOrder}
@@ -209,30 +225,30 @@ const Cart = () => {
               <>
                 <ul className="billing-details-list">
                   <li className="billing-details-item">
-                    <strong>Name :</strong> 
+                    <strong>Name :</strong>
                     <span className="billing-details-item-value">{billingDetails.name || 'User'}</span>
                   </li>
                   <li className="billing-details-item">
-                    <strong>Email :</strong> 
+                    <strong>Email :</strong>
                     <span className="billing-details-item-value">{user.primaryEmailAddress?.emailAddress}</span>
                   </li>
                   <li className="billing-details-item">
-                    <strong>Address :</strong> 
+                    <strong>Address :</strong>
                     <span className="billing-details-item-value">{billingDetails.address || 'Not provided'}</span>
                   </li>
                   <li className="billing-details-item">
-                    <strong>Phone Number :</strong> 
+                    <strong>Phone Number :</strong>
                     <span className="billing-details-item-value">{billingDetails.number || 'Not provided'}</span>
                   </li>
                   <li className="billing-details-item">
-                    <strong>City :</strong> 
+                    <strong>City :</strong>
                     <span className="billing-details-item-value">{billingDetails.city || 'Not provided'}</span>
                   </li>
                   <li className="billing-details-item">
-                    <strong>Postal Code :</strong> 
+                    <strong>Postal Code :</strong>
                     <span className="billing-details-item-value">{billingDetails.postalCode || 'Not provided'}</span>
                   </li>
-                
+
                 </ul>
                 <button
                   className="billing-edit-button"
