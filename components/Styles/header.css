@@ -1,110 +1,44 @@
-.menu-sm.dropdown-content,
-.card.card-compact.dropdown-content,
-.menu-horizontal details[open] > ul {
-  z-index: 50; /* Ensure these elements have a high z-index */
-}
-
+/* Dropdown menu styling */
 .menu-sm.dropdown-content {
-  position: absolute; /* Ensures the dropdown is positioned absolutely */
+  position: absolute;
+  background-color: #000000;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 200px;
 }
 
-.card.card-compact.dropdown-content {
-  position: absolute; /* Ensures the dropdown is positioned absolutely */
-}
-
-.menu-horizontal details[open] > ul {
-  position: absolute; /* Ensures the nested dropdown is positioned absolutely */
-}
-
-.dropdown-content {
-  background-color: #ffffff; /* Background color for the dropdown */
-  border: 1px solid #eaeaea; /* Border for the dropdown */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for dropdown */
-  margin-top: 1rem; /* Margin to separate dropdown from its trigger */
-  padding: 1rem; /* Padding inside the dropdown */
-  width: 200px; /* Width of the dropdown */
-}
-
-.navbars {
-  background-color: #ff4d4d;
-  color:rgb(15, 14, 14);
-  text-align: center;
-  font-size:0.6rem;
-  font-family:'Times New Roman', Times, serif; /* Specified a font family for a cleaner look */
-  height: auto;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-
-/* header.css */
-
-/* Default styling for large screens */
-.btn-ghost.text-3xl {
-  font-size: 2rem;
-}
-
-.btn-square {
+/* Responsive font size for buttons */
+.btn-ghost {
+  font-size: 1.3rem;
   padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 4px;
 }
 
-@media (max-width: 1024px) {
-  .btn-ghost.text-3xl {
-    font-size: 1.3rem;
-  }
-}
-
-/* Styling for medium screens (tablets) */
 @media (max-width: 768px) {
-  .btn-ghost.text-3xl {
-    font-size: 1.5rem;
-  }
-  .btn-square {
+  .btn-ghost {
+    font-size: 1rem;
     padding: 8px 16px;
-    font-size: 0.9rem;
-    border-radius: 3px;
   }
 }
 
-/* Styling for small screens (mobile devices) */
-@media (max-width: 480px) {
-  .btn-ghost.text-3xl {
-    font-size: 1.2rem;
-  }
-  .btn-square {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-    border-radius: 2px;
-  }
-}
-
-@media (max-width: 320px) {
-  .btn-ghost.text-3xl {
-    font-size: 0.8rem;
-  }
-  .btn-square {
-    padding: 4px 8px;
-    font-size: 0.6rem;
-    border-radius: 2px;
-  }
-}
-
-
+/* Navbar link hover styling */
 .navbar ul li a:hover {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
-.navbar ul li .group-hover ul {
+/* Dropdown links styling */
+.dropdown ul li a {
+  color: rgb(255, 255, 255);
+}
+
+/* Display dropdown on hover */
+.group:hover ul {
   display: block;
 }
 
-.group-hover ul {
-  display: none;
-}
-
+/* Outline button styling */
 .btn-outline {
   border: 1px solid #000;
   padding: 6px 12px;
@@ -115,7 +49,8 @@
   background-color: black;
   color: white;
 }
-/* Mobile-specific styles */
+
+/* Mobile-specific navbar styles */
 @media (max-width: 1024px) {
   .navbar {
     justify-content: space-between;
@@ -140,28 +75,4 @@
     height: 24px;
     width: 24px;
   }
-}
-
-/* General Styles */
-.btn-outline {
-  border: 1px solid #000;
-  padding: 6px 12px;
-  border-radius: 4px;
-}
-
-.btn-outline:hover {
-  background-color: black;
-  color: white;
-}
-
-.group-hover ul {
-  display: none;
-}
-
-.group:hover ul {
-  display: block;
-}
-
-.dropdown ul li a {
-  color: black;
 }

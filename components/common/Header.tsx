@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import '../Styles/header.css';
+ import '../Styles/header.css'; //removed for fix the build error
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
-import SaluniLogo from '../../assests/images/final1.2.jpg';
+import SaluniLogo from '../../assests/images/final1.3.jpg';
 
 const Header = () => {
   const [items, setItems] = useState([]);
@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="sticky top-0 z-50 bg-black shadow-md text-white ">
         {/* Top Announcement Bar */}
         <div className="bg-gray-200 text-center py-2 text-sm text-gray-900 font-black">ISLAND WIDE CASH ON DELIVERY</div>
 
@@ -33,7 +33,7 @@ const Header = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                 </svg>
               </div>
-              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow  rounded-box w-52 text-white bg-black">
                 <li><Link href="/">HOME</Link></li>
                 <li>
                   <details>
@@ -79,25 +79,25 @@ const Header = () => {
 
           {/* Centered Navigation for Desktop */}
           <div className="hidden lg:flex justify-center flex-grow">
-            <ul className="flex space-x-8 font-semibold text-gray-700">
+            <ul className="flex space-x-8 font-semibold text-white hover:text-white">
               <li><Link href="/">HOME</Link></li>
               <li className="relative group">
                 <Link href="/product/men">MEN</Link>
-                <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 text-sm">
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/shirts">Shirts</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/trousers">Trousers</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/t-shirts">T-Shirts</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/men/shorts">Shorts</Link></li>
+                <ul className="absolute hidden group-hover:block bg-black shadow-lg py-2 text-sm text-white">
+                  <li className="py-2 px-4 hover:bg-black-800 text-white"><Link href="/product/men/shirts">Shirts</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/men/trousers">Trousers</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/men/t-shirts">T-Shirts</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/men/shorts">Shorts</Link></li>
                 </ul>
               </li>
               <li className="relative group">
                 <Link href="/product/women">WOMEN</Link>
-                <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 text-sm">
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/shorts">Shorts</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/skirts">Skirts</Link></li>
-                  <li className="py-2 px-4 hover:bg-gray-200"><Link href="/product/women/tops">Tops</Link></li>
-                  <li className="py-2 px-2 hover:bg-gray-200"><Link href="/product/women/t-shirts">T-Shirts</Link></li>
-                  <li className="py-2 px-2 hover:bg-gray-200"><Link href="/product/women/dresses">Dresses</Link></li>
+                <ul className="absolute hidden group-hover:block bg-black shadow-lg py-2 text-sm text-white">
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/women/shorts">Shorts</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/women/skirts">Skirts</Link></li>
+                  <li className="py-2 px-4 hover:bg-black-800"><Link href="/product/women/tops">Tops</Link></li>
+                  <li className="py-2 px-2 hover:bg-black-800"><Link href="/product/women/t-shirts">T-Shirts</Link></li>
+                  <li className="py-2 px-2 hover:bg-black-800"><Link href="/product/women/dresses">Dresses</Link></li>
 
                 </ul>
               </li>
@@ -114,7 +114,7 @@ const Header = () => {
             {/* Cart Button */}
             <div className="relative">
               <Link href="/product/cart">
-                <p className="text-gray-700 hover:text-black">
+                <p className="text-white-700 hover:text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
@@ -133,7 +133,7 @@ const Header = () => {
               <SignedOut>
                 <SignInButton>
                   <Link href="/sign-in">
-                    <button className="bg-black-400 text-black  py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition duration-300 ease-in-out transform hover:scale-105">
+                    <button className="bg-white-400 text-white  py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition duration-300 ease-in-out transform hover:scale-105">
                       Sign In
                     </button>
                   </Link>
