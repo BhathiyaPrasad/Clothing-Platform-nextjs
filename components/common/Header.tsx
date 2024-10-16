@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-// import '../Styles/header.css';
+// import '../Styles/header.css'; //removed for fix the build error
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import SaluniLogo from '../../assests/images/final1.3.jpg';
 
